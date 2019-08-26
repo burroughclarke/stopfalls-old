@@ -9,7 +9,7 @@ app.use(express.urlencoded());
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
-app.get('/miow', (request, response) => {
+app.get('/', (request, response) => {
   response.send('Hello from Express!')
 })
 
@@ -67,7 +67,7 @@ MongoClient.connect(uri, function(err, client) {
    const collection = client.db("test").collection("devices");
    // perform actions on the collection object
    
-   
+
 
 
    client.close();
@@ -79,8 +79,8 @@ MongoClient.connect(uri, function(err, client) {
 
 
 
-
-
+// set 'buildpack' as nodejs:
+// heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs#v83 -a stopfalls
 
 
 
